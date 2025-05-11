@@ -1,0 +1,35 @@
+2025-05-09 18:01:29 Katarzyna Trzaska 0/5
+2025-05-09 18:36:23 Katarzyna Trzaska 0/5
+2025-05-09 18:41:36 Katarzyna Trzaska 0/5
+2025-05-09 18:48:52 Katarzyna Trzaska 3/5
+2025-05-09 19:17:51 Katarzyna Trzaska 0/5
+2025-05-09 19:22:02 Katarzyna Trzaska 0/5
+2025-05-09 19:24:28 Katarzyna Trzaska 0/5
+2025-05-09 19:27:47 Katarzyna Trzaska 1/5
+2025-05-09 19:28:45 Katarzyna Trzaska 0/5
+2025-05-09 19:37:01 Katarzyna Trzaska 0/5
+2025-05-09 19:40:28 Katarzyna Trzaska 0/5
+2025-05-09 19:43:09 Katarzyna Trzaska 0/5
+2025-05-09 19:43:41 Katarzyna Trzaska 4/5
+2025-05-09 19:53:53 Katarzyna Trzaska 0/5
+2025-05-09 20:32:06 Katarzyna Trzaska 1/5
+2025-05-09 20:33:30 Katarzyna Trzaska 2/5
+2025-05-09 20:35:01 Katarzyna Trzaska 0/5
+2025-05-09 20:41:25 Katarzyna Trzaska 0/5
+2025-05-09 20:51:49 Katarzyna Trzaska 1/5
+2025-05-09 20:52:48 Katarzyna Trzaska 2/5
+2025-05-09 21:45:45 Katarzyna Trzaska 0/5
+2025-05-09 21:47:01 GET / HTTP/1.1 0/5
+2025-05-09 21:47:01 GET / HTTP/1.1 0/5
+2025-05-09 21:51:39 Katarzyna Trzaska 0/5
+2025-05-09 21:59:17 Katarzyna Trzaska 0/5
+2025-05-09 22:06:32 Katarzyna Trzaska 2/5
+2025-05-10 09:15:47 Krystian 2/5
+2025-05-10 09:20:44 Krystian 0/5
+2025-05-10 09:43:03 Krystian 2/5
+2025-05-10 15:53:56 oki47 2/5
+2025-05-10 15:56:23 xdoi] 3/5
+2025-05-11 09:31:47 __TIMEOUT__ | Odpowiedzi:  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   - 
+2025-05-11 11:16:13 s | Odpowiedzi: s  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   - 
+2025-05-11 11:26:53 xs | Odpowiedzi:  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+2025-05-11 11:51:12 Adam Nawałka | Odpowiedzi: c a b  -  d g a c b a b c d a c d b b d a
