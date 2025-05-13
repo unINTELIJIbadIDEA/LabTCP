@@ -91,7 +91,6 @@ class ClientHandler implements Runnable {
                     userAnswers.add(" - ");
                 } else if (answer.equalsIgnoreCase("rezygnuje")) {
                     disconnect("Użytkownik zrezygnował z quizu");
-
                     return;
                 } else {
                     if (answer.trim().equalsIgnoreCase(correctAnswer.trim())) {

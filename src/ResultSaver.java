@@ -48,7 +48,9 @@ public class ResultSaver {
                 System.out.println("Error saving result: " + e.getMessage());
             }
         } finally {
-            lock.unlock();
+            if (lock.isHeldByCurrentThread()) {
+                lock.unlock();
+            }
         }
     }
 }
