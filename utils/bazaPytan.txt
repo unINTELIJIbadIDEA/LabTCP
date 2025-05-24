@@ -1,21 +1,21 @@
 20
-Który z języków programowania jest kompilowany?;a) Python;b) JavaScript;c) C++;d) HTML;c
-Co oznacza skrót CPU?;a) Central Processing Unit;b) Control Processing Unit;c) Computer Power Unit;d) Central Programming Unit;a
-Jakie rozszerzenie ma plik arkusza kalkulacyjnego Excel?;a) .docx;b) .xlsx;c) .pptx;d) .pdf;b
-Który port jest domyślnie używany przez protokół HTTPS?;a) 21;b) 22;c) 443;d) 80;c
-Który z poniższych to język zapytań do baz danych?;a) SQL;b) CSS;c) XML;d) JSON;a
-Jaka technologia jest używana do tworzenia responsywnych stron WWW?;a) PHP;b) SQL;c) CSS;d) Bash;c
-Która z poniższych firm stworzyła system operacyjny Android?;a) Microsoft;b) Apple;c) IBM;d) Google;d
-Który z protokołów służy do przesyłania poczty e-mail?;a) FTP;b) SMTP;c) HTTPS;d) DNS;b
-Który z operatorów logicznych oznacza „lub” w języku Java?;a) &&;b) ||;c) !=;d) ==;b
-Czym jest RAM w komputerze?;a) Dyskiem twardym;b) Procesorem;c) Pamięcią operacyjną;d) Kartą graficzną;c
-Jakie urządzenie służy do wyświetlania obrazu z komputera?;a) Klawiatura;b) Monitor;c) Myszka;d) Router;b
-Który system operacyjny jest oparty na jądrze Linuxa?;a) Windows;b) macOS;c) Ubuntu;d) iOS;c
-Która z technologii służy do przechowywania stylów CSS w plikach zewnętrznych?;a) <style> w HTML;b) Plik .css;c) Baza danych;d) JSON;b
-Czym jest Git?;a) Edytorem tekstu;b) Narzędziem do wersjonowania;c) Systemem operacyjnym;d) Językiem programowania;b
-Jaka jest funkcja pętli for w programowaniu?;a) Do wywoływania funkcji;b) Do warunków;c) Do iteracji;d) Do importowania bibliotek;c
-Które rozszerzenie odpowiada skryptowi JavaScript?;a) .js;b) .java;c) .py;d) .html;a
-Które z poniższych jest bazą danych NoSQL?;a) MySQL;b) PostgreSQL;c) MongoDB;d) Oracle;c
-Która przeglądarka internetowa została stworzona przez Google?;a) Safari;b) Firefox;c) Opera;d) Chrome;d
-Jaki operator służy do porównania wartości w Pythonie?;a) =;b) ==;c) :=;d) !==;b
-Który język programowania jest najczęściej używany w analizie danych?;a) Ruby;b) Java;c) R;d) Bash;c
+Który z języków programowania jest kompilowany?;Python;JavaScript;C++;HTML;c
+Co oznacza skrót CPU?;Central Processing Unit;Control Processing Unit;Computer Power Unit;Central Programming Unit;a
+Jakie rozszerzenie ma plik arkusza kalkulacyjnego Excel?;.docx;.xlsx;.pptx;.pdf;b
+Który port jest domyślnie używany przez protokół HTTPS?;21;22;443;80;c
+Który z poniższych to język zapytań do baz danych?;SQL;CSS;XML;JSON;a
+Jaka technologia jest używana do tworzenia responsywnych stron WWW?;PHP;SQL;CSS;Bash;c
+Która z poniższych firm stworzyła system operacyjny Android?;Microsoft;Apple;IBM;Google;d
+Który z protokołów służy do przesyłania poczty e-mail?;FTP;SMTP;HTTPS;DNS;b
+Który z operatorów logicznych oznacza „lub” w języku Java?;&&;||;!=;==;b
+Czym jest RAM w komputerze?;Dyskiem twardym;Procesorem;Pamięcią operacyjną;Kartą graficzną;c
+Jakie urządzenie służy do wyświetlania obrazu z komputera?;Klawiatura;Monitor;Myszka;Router;b
+Który system operacyjny jest oparty na jądrze Linuxa?;Windows;macOS;Ubuntu;iOS;c
+Która z technologii służy do przechowywania stylów CSS w plikach zewnętrznych?;<style> w HTML;Plik .css;Baza danych;JSON;b
+Czym jest Git?;Edytorem tekstu;Narzędziem do wersjonowania;Systemem operacyjnym;Językiem programowania;b
+Jaka jest funkcja pętli for w programowaniu?;Do wywoływania funkcji;Do warunków;Do iteracji;Do importowania bibliotek;c
+Które rozszerzenie odpowiada skryptowi JavaScript?;.js;.java;.py;.html;a
+Które z poniższych jest bazą danych NoSQL?;MySQL;PostgreSQL;MongoDB;Oracle;c
+Która przeglądarka internetowa została stworzona przez Google?;Safari;Firefox;Opera;Chrome;d
+Jaki operator służy do porównania wartości w Pythonie?;=;==;:=;!==;b
+Który język programowania jest najczęściej używany w analizie danych?;Ruby;Java;R;Bash;c

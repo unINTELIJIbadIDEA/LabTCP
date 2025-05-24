@@ -1,9 +1,15 @@
+package com.unINTELIJIbadIDEA;
+
+import com.unINTELIJIbadIDEA.server.model.Question;
+import com.unINTELIJIbadIDEA.server.services.QuestionService;
+import com.unINTELIJIbadIDEA.server.services.ResultService;
+import com.unINTELIJIbadIDEA.server.services.ScoreService;
+
 import java.io.*;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 class ClientHandler implements Runnable {
     private final Socket clientSocket;
@@ -16,6 +22,10 @@ class ClientHandler implements Runnable {
     private long lastActivity;
     private boolean connected = true;
     private int score = 0;
+
+    private final QuestionService questionService = new QuestionService();
+    private final ResultService resultService = new ResultService();
+    private final ScoreService scoreService = new ScoreService();
 
     public ClientHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -69,46 +79,66 @@ class ClientHandler implements Runnable {
         }
     }
 
-    private void startQuiz() throws IOException {
+    private void startQuiz() {
         sendMessage("TIMEOUT:" + answerTimeout);
-        try (Scanner fileScanner = new Scanner(new File("utils/bazaPytan.txt"))) {
-            int totalQuestions = Integer.parseInt(fileScanner.nextLine());
 
-            while (fileScanner.hasNextLine() && connected) {
-                String line = fileScanner.nextLine();
-                String[] parts = line.split(";");
-                String correctAnswer = parts[5];
+        List<Question> questions;
+        try {
+            questions = questionService.getAll();
+        } catch (SQLException e) {
+            sendMessage("Błąd serwera: nie można załadować pytań.");
+            return;
+        }
 
+        int totalQuestions = questions.size();
 
+        for (Question q : questions) {
+            if (!connected) break;
 
-                sendMessage(String.join("\n", Arrays.copyOfRange(parts, 0, 5)));
+            sendMessage(
+                    q.getQuestionText() + "\n" +
+                            "a) " + q.getAnswerA() + "\n" +
+                            "b) " + q.getAnswerB() + "\n" +
+                            "c) " + q.getAnswerC() + "\n" +
+                            "d) " + q.getAnswerD()
+            );
 
+            try {
                 String answer = in.readLine();
                 lastActivity = System.currentTimeMillis();
 
                 if (answer == null || answer.equals("__TIMEOUT__")) {
-                    sendMessage("Czas na odpowiedź minął. Prawidłowa odpowiedź to: " + correctAnswer);
+                    sendMessage("Czas na odpowiedź minął. Prawidłowa odpowiedź to: " + q.getCorrectAnswer());
                     userAnswers.add(" - ");
                 } else if (answer.equalsIgnoreCase("rezygnuje")) {
                     disconnect("Użytkownik zrezygnował z quizu");
                     return;
                 } else {
-                    if (answer.trim().equalsIgnoreCase(correctAnswer.trim())) {
+                    if (answer.trim().equalsIgnoreCase(q.getCorrectAnswer().trim())) {
                         sendMessage("Prawidłowa odpowiedź!");
                         score++;
                     } else {
-                        sendMessage("Nieprawidłowa odpowiedź. Prawidłowa odpowiedź to: " + correctAnswer);
+                        sendMessage("Nieprawidłowa odpowiedź. Prawidłowa odpowiedź to: " + q.getCorrectAnswer());
                     }
                     userAnswers.add(answer.trim());
                 }
 
+            } catch (IOException e) {
+                disconnect("Błąd podczas odczytu odpowiedzi: " + e.getMessage());
+                return;
             }
+        }
 
-            sendMessage("Koniec quizu! Twój wynik to: " + score + "/" + totalQuestions);
-            ResultSaver.saveResultScore(clientName, score, totalQuestions);
-            ResultSaver.saveResult(clientName, userAnswers);
+        sendMessage("Koniec quizu! Twój wynik to: " + score + "/" + totalQuestions);
+
+        try {
+            scoreService.save(clientName, score, totalQuestions);
+            resultService.save(clientName, userAnswers);
+        } catch (SQLException e) {
+            sendMessage("Błąd przy zapisie wyników: " + e.getMessage());
         }
     }
+
 
     private void sendMessage(String message) {
         if (out != null) {
@@ -121,7 +151,7 @@ class ClientHandler implements Runnable {
             connected = false;
             try {
                 sendMessage("Disconnected: " + reason);
-                Serverr.removeClient(this);
+                Server.removeClient(this);
                 clientSocket.close();
             } catch (IOException e) {
                 System.out.println("Error closing connection: " + e.getMessage());

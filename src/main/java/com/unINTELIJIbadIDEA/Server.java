@@ -1,30 +1,27 @@
-import java.io.File;
+package com.unINTELIJIbadIDEA;
+
+import com.unINTELIJIbadIDEA.server.init.DatabaseInitializer;
+import com.unINTELIJIbadIDEA.utils.Config;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Serverr {
+public class Server {
     private static final List<ClientHandler> clients = new CopyOnWriteArrayList<>();
     private static final ExecutorService connectionController = Executors.newSingleThreadExecutor();
 
     public static void main(String[] args) {
-        int port = 8000;
-        int maxClients = 10;
+        DatabaseInitializer initializer = new DatabaseInitializer();
+        initializer.initializeDatabase();
 
-
-        try (Scanner scanner = new Scanner(new File("utils/server_configs.txt"))) {
-            port = Integer.parseInt(scanner.nextLine().split(" = ")[1]);
-            maxClients = Integer.parseInt(scanner.nextLine().split(" = ")[1]);
-        } catch (IOException e) {
-            System.out.println("Error loading configuration: " + e.getMessage());
-            System.out.println("Using default values - port: " + port + ", maxClients: " + maxClients);
-        }
+        int port = Integer.parseInt(Config.getProperty("port"));
+        int maxClients = Integer.parseInt(Config.getProperty("maxClients"));
 
 
         startConnectionController();
